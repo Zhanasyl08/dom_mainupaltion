@@ -1,66 +1,28 @@
-# Assignment 3 — Graph Algorithms
+# Assignment 5 - JavaScript Basics
 
-**Student:** Zhanassyl Omar  
-**Group:** SE-2538  
-**Course:** Design and Analysis of Algorithms
+Name: Zhanassyl Omar  
+Group: SE-2538
 
-## Implemented algorithms
+## Part 1: Profile Object, Data Types & Arithmetic
 
-1. `dsu` — path compression and union by size, returns components and current largest component after every union.
-2. `kruskal` — minimum spanning forest using sorted edges and DSU.
-3. `prim` — minimum spanning forest using a priority queue; starts again for each separate component.
-4. `scc` — Kosaraju's algorithm with iterative DFS, plus condensation graph.
-5. `topo` — iterative three-state DFS and directed cycle detection.
-6. `dag` — checks acyclicity, then shortest paths in topological order (negative weights supported).
+Task 1: Created `userProfile` with name, birth year, developer status, and hobbies.  
+Task 2: Calculated age, age in months, and hobbies count using JavaScript.
 
-## Project files
+![Part 1](screenshots/part1.png)
 
-- `src/algorithms.py` — graph algorithms
-- `src/main.py` — UTF-8 JSON Lines input/output
-- `submission.json` — Python entry point
-- `tests/test_algorithms.py` — unit tests
-- `tools/run.py` — setup/test script
-- `tools/benchmark.py` — benchmarking program
-- `ANALYSIS.md` — explanation and complexity analysis
+## Part 2: Form Input & Event Responses
 
-## Run
+Task 3: Created a form with username, birth year, and submit button.  
+Task 4: Used a submit event listener to update the profile with entered values.
 
-Python 3.12 or later is recommended. No external packages are required.
+![Part 2](screenshots/part2.png)
 
-```bash
-python tools/run.py --setup
-python tools/run.py --check
-python src/main.py < examples.jsonl
-python tools/benchmark.py
-```
+## Part 3: DOM List Manipulation
 
-Each input line is a JSON request, and each output line is one JSON result. State is reset for every request.
+Task 5: Displayed hobbies in an unordered list. The Add Item button adds a hobby and the Remove Item button removes the last one.
 
-## Request structure used in this project
-
-- Common fields: `method`, `n`, `edges`.
-- `dsu`: `operations` contains pairs `[u,v]`.
-- `kruskal`, `prim`, `dag`: `edges` contains `[u,v,w]`.
-- `scc`, `topo`: `edges` contains `[u,v]`.
-- `dag`: `source` is the start vertex.
-- Vertex IDs are from `0` to `n-1`. Edge IDs are their original input positions.
-
-Example input:
-
-```json
-{"method":"kruskal","n":3,"edges":[[0,1,4],[1,2,2],[0,2,10]]}
-```
-
-Example output:
-
-```json
-{"cost":6,"edge_ids":[1,0],"components":1}
-```
-
-`dag` uses `null` for unreachable distances, `-1` for an absent parent edge, and `0` for source distance.
-
-**Note:** The assignment screenshot references a separate official template and full JSON specification, but those files were not provided. These keys and `submission.json` fields are a working interface, not a confirmed match to the official public checker. The official template is needed to match its exact contract.
+![Part 3](screenshots/part3.png)
 
 ## Summary
 
-I implemented six graph algorithms using Python lists, sets, a heap, and DSU. I tested disconnected graphs, cycles, negative weights, parallel edges, self-loops, empty graphs, and deep graphs. I used iterative DFS to avoid recursion errors on large inputs.
+I created a simple HTML page and connected a JavaScript file. I used an object, variables, arithmetic operations, DOM methods, and event listeners. I checked the form and tested adding and removing list items.
